@@ -1,19 +1,7 @@
-import { EventEmitter } from 'events';
-import { IAgentRuntime, Plugin } from '@elizaos/core';
+declare const homePlugin: {
+    name: string;
+    description: string;
+    clients: ElizaClient[];
+};
 
-declare class HomeClient extends EventEmitter {
-    private runtime;
-    private capabilityManager;
-    private entityManager;
-    private stateManager;
-    private smartHomeManager;
-    constructor(runtime: IAgentRuntime);
-    private initialize;
-    private registerActions;
-    private startStateMonitoring;
-    handleCommand(command: string, userId: string): Promise<any>;
-    stop(): Promise<void>;
-}
-declare const homePlugin: Plugin;
-
-export { HomeClient, homePlugin as default };
+export { homePlugin as default };

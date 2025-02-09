@@ -1,4 +1,4 @@
-// src/index.ts
+// src/client.ts
 import { EventEmitter } from "events";
 import {
   elizaLogger as elizaLogger2,
@@ -537,7 +537,7 @@ ${automationStates}`;
 };
 var automation_state_default = automationStateProvider;
 
-// src/index.ts
+// src/client.ts
 var HomeClient = class extends EventEmitter {
   runtime;
   capabilityManager;
@@ -606,10 +606,9 @@ var HomeClient = class extends EventEmitter {
 var HomeClientInterface = {
   name: "home",
   start: async (runtime) => new HomeClient(runtime)
-  // stop: async (runtime: IAgentRuntime) => {
-  //     elizaLogger.warn("Home Assistant client does not support stopping yet");
-  // }
 };
+
+// src/index.ts
 var homePlugin = {
   name: "home",
   description: "Home Assistant client",
@@ -617,7 +616,6 @@ var homePlugin = {
 };
 var index_default = homePlugin;
 export {
-  HomeClient,
   index_default as default
 };
 //# sourceMappingURL=index.js.map
